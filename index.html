@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>mini vue</title>
+		<style>
+			/* div {
+				width: 200px;
+				height: 200px;
+				color: purple;
+			} */
+		</style>
+	</head>
+	<body>
+		<div id="app"></div>
+		<script src="./01_渲染实现/01_render.js"></script>
+		<script>
+			function tap(e) {
+				e.preventDefault()
+
+				console.log(e.target)
+				return false
+			}
+
+			let vnode = h('div', {}, [
+				h('div', { style: { color: 'red', width: '200px', height: '100px' } }, [
+					h('h3', { color: 'yellow', OnClick: tap }, [h('wht is you life ?')]),
+					h('h3', { color: 'green', OnClick: tap }, [
+						h('wht is you life ? joy')
+					]),
+					h('input', {}, [])
+				]),
+				h('div', { style: { color: 'red' } }, [
+					h('h2', { style: { color: 'tan' }, OnClick: tap }, [
+						h('wht is you life ?')
+					]),
+					h('h2', { style: { color: 'orange' }, OnClick: tap }, [
+						h('wht is you life ? ros')
+					])
+				]),
+				h('h1', { style: { color: 'purple' }, OnClick: tap }, [h('nothing.')])
+			])
+			let vnode2 = h('div', {}, [h('input', { value: '123' }, [])])
+
+			// let vnode = h('bob is handsome guy.')
+			// let vnode2 = h('alice is a prettier girl.')
+
+			mount(vnode2, '#app')
+			console.log('o', vnode)
+			console.log('n', vnode2)
+			setTimeout(() => patch(vnode2, vnode), 1000)
+		</script>
+	</body>
+</html>
