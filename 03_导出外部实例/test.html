@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Document</title>
+	</head>
+	<body>
+		<div id="app"></div>
+		<script src="./01_miniVue.js"></script>
+		<script>
+			const app = createAppByMiniVue({
+				data: { name: 'jiujue', age: 12 },
+				render() {
+					let vnode = h('div', {}, [
+						h('div', {}, [h(`${this.name} --${this.age}`)]),
+						h(
+							'input',
+							{
+								value: this.name,
+								OnInput: e => {
+									this.name = e.target.value
+								}
+							},
+							[]
+						),
+						h(
+							'div',
+							{
+								value: this.age,
+								OnInput: e => {
+									this.age = e.target.value
+								}
+							},
+							[h(`${this.age}`)]
+						),
+						h(
+							'button',
+							{
+								OnClick: e => {
+									this.age++
+								}
+							},
+							[h('+1')]
+						)
+					])
+					return vnode
+				}
+			})
+			app.mount('#app')
+		</script>
+	</body>
+</html>

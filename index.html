@@ -47,10 +47,10 @@
 			// let vnode = h('bob is handsome guy.')
 			// let vnode2 = h('alice is a prettier girl.')
 
-			mount(vnode2, '#app')
+			mount(vnode, '#app')
 			console.log('o', vnode)
 			console.log('n', vnode2)
-			setTimeout(() => patch(vnode2, vnode), 1000)
+			setTimeout(() => patch(vnode, vnode2), 1000)
 		</script>
 	</body>
 </html>
