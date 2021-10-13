@@ -1,0 +1,18 @@
+<script>
+	let _data = { name: 'jiujue', age: 12 }
+	let data = {}
+	for (const prop_key in _data) {
+		Object.defineProperty(data, prop_key, {
+			get() {
+				console.log('get :', _data[prop_key])
+				return _data[prop_key]
+			},
+			set(newVal) {
+				_data[prop_key] = newVal
+				console.log('set :', _data[prop_key])
+
+				return _data[prop_key]
+			}
+		})
+	}
+</script>

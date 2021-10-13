@@ -1,0 +1,10 @@
+<script>
+	class Watcher {
+		static _effect = null
+		static WatchEffect(effect) {
+			Watcher._effect = effect
+			effect()
+			Watcher._effect = null
+		}
+	}
+</script>

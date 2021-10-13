@@ -1,6 +1,7 @@
 {
-  "name": "00-myMini-vue",
-  "version": "1.0.0",
-  "main": "index.js",
-  "license": "MIT"
+	"name": "00-myMini-vue",
+	"version": "1.0.0",
+	"main": "index.js",
+	"license": "MIT",
+	"dependencies": {}
 }
